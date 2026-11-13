@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "note": "Multilingual recall aliases only; verify business meaning and explicit scope separately.",
+  "groups": [
+    [
+      "PK",
+      "\u5df4\u57fa\u65af\u5766",
+      "pakistan"
+    ],
+    [
+      "AO",
+      "\u5b89\u54e5\u62c9",
+      "angola"
+    ],
+    [
+      "KE",
+      "\u80af\u5c3c\u4e9a",
+      "kenya"
+    ],
+    [
+      "NG",
+      "\u5c3c\u65e5\u5229\u4e9a",
+      "nigeria"
+    ],
+    [
+      "\u4f18\u60e0\u5238",
+      "\u6298\u6263\u5238",
+      "coupon",
+      "coupons"
+    ],
+    [
+      "\u98ce\u63a7",
+      "risk",
+      "\u98ce\u9669\u63a7\u5236"
+    ],
+    [
+      "\u589e\u957f",
+      "growth",
+      "\u4e1a\u52a1\u6269\u5f20"
+    ],
+    [
+      "\u77ed\u4fe1",
+      "sms",
+      "text message"
+    ],
+    [
+      "\u8fd8\u6b3e\u94fe\u63a5",
+      "repayment link"
+    ],
+    [
+      "\u65b0\u6237",
+      "\u65b0\u5ba2",
+      "new customer"
+    ],
+    [
+      "\u8001\u6237",
+      "\u8001\u5ba2",
+      "repeat customer"
+    ],
+    [
+      "\u94b1\u5305",
+      "wallet"
+    ],
+    [
+      "\u653e\u6b3e",
+      "\u6253\u6b3e",
+      "payout",
+      "disbursement"
+    ],
+    [
+      "\u5bfc\u6d41",
+      "\u8f6c\u4ecb",
+      "referral"
+    ],
+    [
+      "\u903e\u671f",
+      "overdue"
+    ]
+  ]
+}

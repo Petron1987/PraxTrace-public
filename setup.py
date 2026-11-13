@@ -1,0 +1,2 @@
+from setuptools import setup, find_packages
+setup(name="praxtrace", version="0.1.0a1", description="Business evidence and continuous verification tools for AI agents", long_description=open("README.md", encoding="utf-8").read(), long_description_content_type="text/markdown", license="MIT", python_requires=">=3.10", package_dir={"":"src"}, packages=find_packages("src"), package_data={"praxtrace":["*.json","*.md"]}, entry_points={"console_scripts":["praxtrace=praxtrace.__main__:main"]})

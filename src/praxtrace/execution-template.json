@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "case_id": "replace-with-case-id",
+  "request": "TODO",
+  "scope": "TODO",
+  "scope_basis": "TODO",
+  "reuse": "TODO",
+  "tasks": [
+    {
+      "id": "Q1",
+      "intent": "describe",
+      "question": "TODO",
+      "acceptance": "TODO",
+      "status": "pending",
+      "evidence": [],
+      "result": "",
+      "limitation": "",
+      "next_check": ""
+    }
+  ],
+  "routes": [
+    {
+      "task_ids": [
+        "Q1"
+      ],
+      "capability": "TODO",
+      "provider": "local",
+      "decision": "selected",
+      "reason": "TODO",
+      "stage": "none",
+      "status": "planned",
+      "evidence": []
+    }
+  ],
+  "checks": [
+    {
+      "id": "scope",
+      "status": "pending",
+      "detail": ""
+    },
+    {
+      "id": "evidence",
+      "status": "pending",
+      "detail": ""
+    },
+    {
+      "id": "decision",
+      "status": "pending",
+      "detail": ""
+    }
+  ],
+  "actions": [],
+  "report": "",
+  "elapsed_seconds": null,
+  "analysis_brief": {
+    "version": 1,
+    "revision": 1,
+    "decision": "TODO",
+    "risk": "TODO",
+    "evidence_plan": "TODO",
+    "stop_condition": "TODO",
+    "revision_reason": "TODO",
+    "sources": [
+      {
+        "source_id": "TODO",
+        "kind": "TODO",
+        "availability": "unknown",
+        "applicability": "unknown",
+        "freshness": "unknown",
+        "note": "TODO"
+      }
+    ]
+  }
+}

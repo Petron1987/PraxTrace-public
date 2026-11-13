@@ -1,0 +1,68 @@
+{
+  "codebase-reverse": {
+    "repository": "sharptoolbox/codebase-reverse",
+    "commit": "2fc2a71d2d9a477a13b694849b7c4f70e3758636",
+    "entry_files": [
+      "README_EN.md",
+      "SKILL.md",
+      "references/single-function-requirements-spec.md",
+      "scripts/validate_meta_model.ps1"
+    ]
+  },
+  "reversa": {
+    "repository": "sandeco/reversa",
+    "commit": "0d4e01d9f28926ae1379cfc68f4588ce8e1026b0",
+    "entry_files": [
+      "README.md",
+      "agents/reversa/SKILL.md",
+      "agents/reversa-archaeologist/SKILL.md",
+      "agents/reversa-writer/SKILL.md"
+    ]
+  },
+  "dds": {
+    "repository": "lucasacoutinho/dds",
+    "commit": "65164f86db5d8fddb983d99c00bd619cd8ffafbc",
+    "entry_files": [
+      "README.md",
+      "skills/excavate/SKILL.md",
+      "agents/data-archaeologist.md",
+      "agents/business-rule-extractor.md",
+      "agents/fidelity-judge.md"
+    ]
+  },
+  "sdd-pro": {
+    "repository": "zekiriabd/SDD-Pro",
+    "commit": "d376b48691f5cd2646650496fd5b76fd57d9b775",
+    "entry_files": [
+      "README.md"
+    ]
+  },
+  "ragflow": {
+    "repository": "infiniflow/ragflow",
+    "commit": "0410c4a2667bd27d38eeb7c0a35a24d71b58f4f0",
+    "entry_files": [
+      "README.md",
+      "docs/guides/data_source/data_source_configuration.md",
+      "docs/guides/agent/agent_workflow/basic_component.md",
+      "docs/guides/agent/agent_workflow/tool_components.md",
+      "internal/agent/templates/text2sql_data_expert.json"
+    ]
+  },
+  "deepwiki-open": {
+    "repository": "AsyncFuncAI/deepwiki-open",
+    "commit": "6ec6712d327d2d6e4ba6efe7d54fda1a9e0b4178",
+    "entry_files": [
+      "README.md",
+      "Ollama-instruction.md"
+    ]
+  },
+  "codegraph": {
+    "repository": "colbymchenry/codegraph",
+    "commit": "8f1f842b5b828175992d2ce2cdf673b955b2cce9",
+    "entry_files": [
+      "README.md",
+      "src/mcp/server-instructions.ts",
+      "TELEMETRY.md"
+    ]
+  }
+}

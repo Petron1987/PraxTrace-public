@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "praxtrace"
+version = "0.1.0a1"
+description = "Business evidence and continuous verification tools for AI agents"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+license = {text = "MIT"}
+
+[project.urls]
+Repository = "https://github.com/Petron1987/PraxTrace-public"
+
+[project.scripts]
+praxtrace = "praxtrace.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+praxtrace = ["*.json", "*.md"]

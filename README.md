@@ -2,11 +2,13 @@
 
 Business evidence and continuous verification tools for AI agents.
 
-Status: **0.1.0a1 extraction preview**, not a complete autonomous analyst. The package provides case registration, immutable deliverable snapshots, execution and evidence checks, source inventories, and optional pinned upstream tools. An AI agent interprets the evidence and writes the analysis. Automatic source monitoring and dependency-driven revalidation remain roadmap items.
+Version `0.1.0a2` is an extraction preview distributed through [GitHub Releases](https://github.com/Petron1987/PraxTrace-public/releases). It is not published on PyPI.
+
+Status: **0.1.0a2 extraction preview**, not a complete autonomous analyst. The package provides case registration, immutable deliverable snapshots, execution and evidence checks, source inventories, and optional pinned upstream tools. An AI agent interprets the evidence and writes the analysis. Automatic source monitoring and dependency-driven revalidation remain roadmap items.
 
 ## Install and use
 
-Requires Python 3.10+; Git is needed only for source and upstream commands. Install the built wheel with `python -m pip install dist/praxtrace-0.1.0a1-py3-none-any.whl`. This is a regular installation, not an editable install or a directory link.
+Requires Python 3.10+; Git is needed only for source and upstream commands. Download the wheel from the [0.1.0a2 prerelease](https://github.com/Petron1987/PraxTrace-public/releases/tag/v0.1.0a2) and install it with `python -m pip install ./praxtrace-0.1.0a2-py3-none-any.whl`. This is a regular installation, not an editable install or a directory link.
 
 ```python
 import praxtrace
@@ -24,6 +26,8 @@ python -m unittest discover -s tests
 ```
 
 Run commands from your analysis workspace, or use the command-specific `--root` option. Mutable upstream state defaults to `.praxtrace/` in the working directory; set `PRAXTRACE_STATE_DIR` before process startup to override it. Package resources are read-only. Existing host projects can keep their own case/output locations; legacy report import currently defaults to `analysis/workspace/outputs` under the chosen workspace root.
+
+Hosts can set `PRAXTRACE_SCAN_EXCLUDES` before import to a comma-separated list of directory names to exclude from case and artifact discovery, in addition to the built-in exclusions.
 
 ## Scope and boundaries
 

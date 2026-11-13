@@ -12,6 +12,7 @@ import unicodedata
 
 IDENTIFIER = re.compile(r"[A-Za-z0-9][A-Za-z0-9._+-]{0,79}")
 SKIP = {".git", ".cache", ".local", "node_modules", "venv", "repos", "upstream", "tmp", "archive", "legacy-sources"}
+SKIP.update(name.strip() for name in os.environ.get("PRAXTRACE_SCAN_EXCLUDES", "").split(",") if name.strip())
 DELIVERY = {"draft", "ready", "referenced", "delivered", "unknown"}
 APPROVAL = {"not_requested", "pending", "approved", "rejected", "unknown"}
 DECISIONS = {"reuse", "revise", "add", "narrow", "move", "retire", "none", "defer", "legacy_unknown"}
@@ -449,7 +450,7 @@ def render_index(index, root, destination):
             try:
                 artifacts.append(link(f"{art['version']} / {art['delivery_status']} / {art['approval_status']}", art["path"]))
             except (ValueError, KeyError):
-                artifacts.append("\u4ea4\u4ed8\u7269Needs repair")
+                artifacts.append("Artifact needs repair")
         if entry.get("legacy_report"):
             artifacts.append(link("Historical report, status unregistered", entry["legacy_report"]))
         states = ", ".join(r.get("status", "unknown") for r in entry.get("runs") or [] if isinstance(r, dict)) or "legacy"
@@ -457,7 +458,7 @@ def render_index(index, root, destination):
         label = ("[Validation failed] " if not entry["valid"] else "") + entry.get("title", entry["case_id"])
         lines.append(f"| {link(label, entry['path'])} | {safe(', '.join(entry.get('tags') or []))} | {safe(states)} | {'; '.join(artifacts) or 'Unregistered'} | {safe(learning)} |")
     lines += ["", f"Global link issues: {len(index['issues'])}. See the corresponding JSON and inspect sources before reuse.", ""]
-    lines += ["## Unregistered\u4ea7\u7269\u5019\u9009", "", "Scan candidates require review before registration; they do not prove independent questions or delivery.", ""]
+    lines += ["## Unregistered artifact candidates", "", "Scan candidates require review before registration; they do not prove independent questions or delivery.", ""]
     lines += ["- " + link(x["path"], x["path"]) for x in index.get("unregistered_outputs", [])]
     if not index.get("unregistered_outputs"):
         lines.append("No candidates found in the scanned scope.")

@@ -1,5 +1,6 @@
 import copy
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -168,6 +169,21 @@ class CaseRecordsTests(unittest.TestCase):
         self.assertEqual(record.read_bytes(), content)
         self.assertTrue(validate_case(read_json(record), self.root, "plan")["ok"])
         self.assertFalse(validate_case(read_json(record), self.root, "delivery")["ok"])
+
+    def test_host_scan_excludes_apply_to_cases_and_outputs(self):
+        hidden = self.root / "cases/host-history"
+        hidden.mkdir()
+        (hidden / "case.json").write_text("{}", encoding="utf-8")
+        (hidden / "report.md").write_text("Historical source, not a current case", encoding="utf-8")
+        command = [sys.executable, "-B", "-X", "utf8", "-m", "praxtrace.case_records", "--root", str(self.root),
+                   "index", "--scan", "cases", "--output", ".local/filtered.json"]
+        result = subprocess.run(command, capture_output=True, text=True, encoding="utf-8",
+                                env={**os.environ, "PRAXTRACE_SCAN_EXCLUDES": "host-history"})
+        self.assertEqual(result.returncode, 0, result.stderr)
+        index = read_json(self.root / ".local/filtered.json")
+        self.assertEqual(len(index["entries"]), 1)
+        self.assertFalse(index["issues"])
+        self.assertFalse(any("host-history" in x["path"] for x in index["unregistered_outputs"]))
 
     def test_malformed_records_are_errors_not_crashes(self):
         for key, value in (("runs", None), ("relations", [None]), ("case_id", []), ("artifacts", [{"run_id": []}])):
